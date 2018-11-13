@@ -35,7 +35,7 @@ contract MetaCoin is StandardToken {
 	}
 
 	//以1：100的比例买入代币
-	function buyCoin() public payable {
+	function buyCoin() public {
 		balances[msg.sender] += (msg.value/10**14);
 	}
 

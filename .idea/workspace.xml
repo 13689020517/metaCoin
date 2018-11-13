@@ -3,12 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="a0ce7b6d-0ef1-46e1-ba40-ffd4e822830a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpack.config.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.dev.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpack.config.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/MetaCoin.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/MetaCoin.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/hooked-web3-provider-Formatted.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/hooked-web3-provider.min.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/lightwallet.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/lightwallet.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lightwallet-Formatted.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/web3.min.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/getWeb3.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/truffle.js" beforeDir="false" afterPath="$PROJECT_DIR$/truffle.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,56 +28,57 @@
     <session id="849955559">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
-          <entry key="project.open.time.0" value="3" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.0" value="5" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.4" value="3" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="13" />
           <entry key="gitignore" value="1" />
-          <entry key="html" value="11" />
-          <entry key="js" value="258" />
-          <entry key="json" value="60" />
-          <entry key="md" value="3" />
+          <entry key="history" value="1" />
+          <entry key="html" value="14" />
+          <entry key="js" value="287" />
+          <entry key="json" value="70" />
+          <entry key="md" value="4" />
           <entry key="png" value="2" />
-          <entry key="sol" value="85" />
+          <entry key="sol" value="90" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="13" />
-          <entry key="HTML" value="11" />
+          <entry key="HTML" value="14" />
           <entry key="Image" value="2" />
-          <entry key="JSON" value="60" />
-          <entry key="JavaScript" value="258" />
-          <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Solidity file" value="85" />
+          <entry key="JSON" value="70" />
+          <entry key="JavaScript" value="287" />
+          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="Solidity file" value="90" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="8" />
+          <entry key="ESLintLanguageService" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="897" />
-          <entry key="js" value="2212" />
+          <entry key="js" value="2552" />
           <entry key="json" value="2" />
-          <entry key="sol" value="674" />
+          <entry key="sol" value="744" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="897" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="2212" />
-          <entry key="Solidity file" value="674" />
+          <entry key="JavaScript" value="2552" />
+          <entry key="Solidity file" value="744" />
         </counts>
       </usages-collector>
     </session>
@@ -126,7 +131,17 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/contracts/MetaCoin.sol">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="582">
+              <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -147,13 +162,18 @@
       <find>tx_Addr</find>
       <find>decimals</find>
       <find>3000</find>
-      <find>getWeb3</find>
       <find>upgradeOldSerialized</find>
       <find>lightwallet</find>
       <find>lightwa</find>
       <find>externals</find>
       <find>module.exports</find>
       <find>metaCoinInstance</find>
+      <find>accounts</find>
+      <find>initWeb3</find>
+      <find>getWeb3</find>
+      <find>hooked</find>
+      <find>web3.eth.sendTransaction</find>
+      <find>spend_value_coin</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,9 +184,7 @@
       <list>
         <option value="$PROJECT_DIR$/migrations/1_initial_migration.js" />
         <option value="$PROJECT_DIR$/truffle-config.js" />
-        <option value="$PROJECT_DIR$/src/utils/getWeb3.js" />
         <option value="$PROJECT_DIR$/contracts/MetaCoin2.sol" />
-        <option value="$PROJECT_DIR$/contracts/MetaCoin.sol" />
         <option value="$PROJECT_DIR$/src/webwallet.html" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/show.js" />
@@ -175,11 +193,14 @@
         <option value="$PROJECT_DIR$/src/js.sol" />
         <option value="$PROJECT_DIR$/public/src/App.js" />
         <option value="$PROJECT_DIR$/node_modules/eth-lightwallet/lib/keystore.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/config/webpack.config.dev.js" />
         <option value="$PROJECT_DIR$/config/webpack.config.prod.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/genesis.json" />
         <option value="$PROJECT_DIR$/truffle.js" />
+        <option value="$PROJECT_DIR$/src/utils/getWeb3.js" />
+        <option value="$PROJECT_DIR$/contracts/MetaCoin.sol" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
   </component>
@@ -213,18 +234,28 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="metaCoin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metaCoin" type="462c0819:PsiDirectoryNode" />
+              <item name="MetaCoin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MetaCoin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MetaCoin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MetaCoin" type="462c0819:PsiDirectoryNode" />
+              <item name="contracts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MetaCoin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MetaCoin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -232,7 +263,7 @@
     <property name="SearchEverywhereHistoryKey" value="KeyStore&#9;FILE&#9;file://D:/metaCoin/node_modules/eth-lightwallet/lib/keystore.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.13.0" />
-    <property name="last_opened_file_path" value="D:/WebWallet" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -246,17 +277,17 @@
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\metaCoin\public" />
       <recent name="D:\metaCoin\src" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/js" />
       <recent name="$PROJECT_DIR$/public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -293,16 +324,20 @@
       <workItem from="1541814295259" duration="2752000" />
       <workItem from="1541817586540" duration="13602000" />
       <workItem from="1541849190732" duration="6110000" />
+      <workItem from="1541986180453" duration="4660000" />
+      <workItem from="1541993339979" duration="14201000" />
+      <workItem from="1542072362230" duration="6933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122852000" />
+    <option name="totallyTimeSpent" value="148646000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19418758" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19411123" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -316,7 +351,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50054526" side_tool="true" weight="0.22996879" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49945474" weight="0.22695035" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49945474" visible="true" weight="0.22684704" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -329,10 +364,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/contracts/Migrations.json" />
-    <entry file="file://$PROJECT_DIR$/build/contracts/SimpleStorage.json" />
-    <entry file="file://$PROJECT_DIR$/node_modules/ganache-cli/build/lib.node.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/child_process/README.md" />
     <entry file="file://$PROJECT_DIR$/node_modules/child_process/package.json" />
     <entry file="file://$PROJECT_DIR$/node_modules/ganache-cli/build/cli.node.js" />
     <entry file="file://$PROJECT_DIR$/contracts/ConvertLib.sol" />
@@ -367,20 +398,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/main.html" />
-    <entry file="file://$PROJECT_DIR$/truffle-config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/migrations/2_deploy_contracts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/migrations/1_initial_migration.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -406,18 +423,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/public/main.js" />
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2250" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/getWeb3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -432,16 +437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -476,13 +471,6 @@
     <entry file="file://$PROJECT_DIR$/node_modules/eth-lightwallet/dist/lightwallet.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="53" column="16" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/eth-lightwallet/dist/lightwallet.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -490,27 +478,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lightwallet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1301475">
-          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lightwallet.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lightwallet.js" />
+    <entry file="file://$PROJECT_DIR$/src/lightwallet.min.js" />
     <entry file="file://$PROJECT_DIR$/public/lightwallet.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="3" column="17675" selection-start-line="3" selection-start-column="17675" selection-end-line="3" selection-end-column="17675" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -528,24 +501,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/MetaCoin.sol">
+    <entry file="file://$PROJECT_DIR$/data0/history" />
+    <entry file="file://$PROJECT_DIR$/node_modules/geth/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        <state relative-caret-position="330">
+          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/geth/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/2_deploy_contracts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/genesis.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/getWeb3.js" />
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/truffle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        <state relative-caret-position="120">
+          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truffle-config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+        <state relative-caret-position="21">
+          <caret line="234" column="22" selection-start-line="234" selection-start-column="22" selection-end-line="234" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#238#263#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/MetaCoin.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
         </state>
       </provider>
     </entry>
