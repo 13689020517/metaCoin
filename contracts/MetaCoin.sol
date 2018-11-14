@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 import 'zeppelin-solidity/contracts/token/ERC20/StandardToken.sol';
 
-contract MetaCoin is StandardToken {
+contract MetaCoin is StandardToken{
 
 	string public name = 'MyCoin';
 	string public symbol = 'MC';
@@ -15,7 +15,7 @@ contract MetaCoin is StandardToken {
 
 	//代币转账
 	function sendCoin(address sender ,address receiver, uint amount)public returns(bool sufficient) {
-		if (balances[sender] < amount) return false;
+		require(balances[sender]>=amount);
 		balances[sender] -= amount;
 		balances[receiver] += amount;
 		return true;
@@ -27,9 +27,9 @@ contract MetaCoin is StandardToken {
 	}
 
 	//以1：100的比例赎回ETH
-	function withDrawETH(uint count) public returns (bool) {
-		uint value = (count/10**14);
-		msg.sender.transfer(value);
+	function withDrawEth(uint count) public returns (bool sufficient) {
+		require(count <= balances[msg.sender]);
+		msg.sender.transfer(count*10**14);
 		balances[msg.sender]-= count;
 		return true;
 	}

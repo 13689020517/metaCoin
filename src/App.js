@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import MetaCoinContract from '../build/contracts/MetaCoin.json'
 import lightwallet from 'lightwallet'
-import getWeb3 from './utils/getWeb3'
 import $ from 'jquery';
+import Web3 from 'web3'
+let hooked = require('hooked-web3-provider');
 
 import './css/oswald.css'
 import './css/open-sans.css'
@@ -29,25 +30,16 @@ class App extends Component {
    * 初始化
    * 把web3保存在state中。
    */
+
   componentWillMount() {
-    getWeb3
-    .then(results => {
-      this.setState({
-        web3: results.web3
-      })
       this.initMyData()
-    })
-    .catch((err) => {
-      console.log('创建web3实例时出现了error',err)
-    })
   }
 
   initMyData(){
       let username = window.location.href.split('=')[1];
-      console.log('用户名：'+username)
       $.ajax({
           type: "post",
-          url: "http://localhost:1993/toMain",
+          url: "http://192.168.1.120:1993/toMain",
           dataType:'JSON',
           data:{ username: username },
           success: data => {
@@ -64,19 +56,13 @@ class App extends Component {
   }
 
     async queryData(data) {
-        console.log('查询的数据：'+data)
-        var username = data.username;
-        console.log('查询的数据11：'+username)
         var password = data.userpassword;
-        console.log('查询的数据22：'+password)
         var keystore = data.keystore;
-        console.log('查询的数据33：'+keystore)
+        console.log('keystore:'+keystore)
         var temp = lightwallet.keystore.deserialize(keystore);
-        console.log('查询的数据44：'+temp)
         /*以用户密码作为输出，产生的Uint8类型的数组的对称密钥，这个密钥用于加密和解密keystore*/
         let myAddr = await new Promise((resolve,reject)=>{
             temp.keyFromPassword(password, function (err, pwDerivedKey) {
-                console.log('走是走到了:'+pwDerivedKey)
                 if(err) {
                     console.log('失败')
                     reject(err)
@@ -84,53 +70,52 @@ class App extends Component {
                     console.log('成功')
                     /*通过seed助记词密码在keystore产生totalAddresses个地址/私钥对。这个地址/私钥对可通过ks.getAddresses()函数调用返回*/
                     temp.generateNewAddress(pwDerivedKey, 1);
-                    console.log('地址:'+temp.getAddresses())
                     myAddr = temp.getAddresses()
-                    resolve(myAddr)
+                    resolve('0x'+myAddr)
                 }
             });
         })
+        this.initWeb3(temp)
         this.setState({
             myAddr: myAddr
         })
-        console.log('在init之前，myAddr：'+this.state.myAddr)
         this.instantiateContract()
     }
 
   instantiateContract() {
-    console.log('init1')
     const contract = require('truffle-contract')
-      console.log('init2')
     const MetaCoin = contract(MetaCoinContract)
-      console.log('init3')
     MetaCoin.setProvider(this.state.web3.currentProvider)
-      console.log('init4')
     //获取本测试网络所有节点地址，用来做列表显示
     this.state.web3.eth.getAccounts((error, accounts) => {
-        console.log('init5')
       this.setState({
         accounts:accounts
       })
-        console.log('init6')
       //部署合约，保存合约实例
       MetaCoin.deployed()
       .then(async (instance) => {
-          console.log('init7')
           this.setState({
               metaCoinInstance:instance,
               tx_Addr:await instance.getContractAddr()
         })
-          console.log('init8')
       }).catch(error =>{
-          console.log('init9')
           console.log(error)
       })
-        console.log('init10')
       //设置默认账户。
-        console.log(this.state.myAddr)
         MetaCoin.defaults(this.state.myAddr)
-        console.log('init11')
+        this.state.web3.eth.defaultAccount=this.state.myAddr;
     })
+  }
+
+  initWeb3(temp){
+      let provider = new hooked({
+          host: 'http://192.168.1.120:8545',
+          transaction_signer: temp
+      });
+      let web3 = new Web3(provider)
+      this.setState({
+         web3: web3
+      })
   }
 
   /**
@@ -145,8 +130,12 @@ class App extends Component {
       let trans_value = this.refs.trans_value.value;
       if(address_to != "" && trans_value != ""){
         
-        this.state.metaCoinInstance.sendCoin(address_from,address_to,trans_value)
-
+        this.state.metaCoinInstance.sendCoin(address_from,address_to,trans_value,{gas:300000})
+            .then( result => {
+              alert('代币转账成功!')
+          }).catch(error=>{
+              alert('代币转账失败：'+error)
+          })
         //转账完成后吧输入框清空
         this.refs.address_from.value = "";
         this.refs.address_to.value = "";
@@ -160,6 +149,9 @@ class App extends Component {
    */
   getBalance(){
       let address_check = this.refs.address_check.value;
+      // if(!address_check.startsWith('0x')){
+      //     address_check = '0x'+address_check
+      // }
 
       //查询代币余额
       this.state.metaCoinInstance.getBalance(address_check)
@@ -167,6 +159,8 @@ class App extends Component {
           this.setState({
               balance: result.toString()
           })
+      }).catch(error=>{
+          alert(error)
       })
       //查询ETH余额
       let eth = this.state.web3.fromWei(this.state.web3.eth.getBalance(address_check).toString(), 'ether');
@@ -188,8 +182,19 @@ class App extends Component {
       web3.eth.sendTransaction({
            from: this.refs.address_from_eth.value,
            to: this.refs.address_to_eth.value,
-           value: web3.toWei(this.refs.trans_value_eth.value, 'ether')
+           value: web3.toWei(this.refs.trans_value_eth.value, 'ether'),
+           gasPrice: 11,
+           gas: 300000
+      },function (err, txhash){
+          if(err){
+              alert('交易失败：'+err)
+          }else {
+              alert('交易成功，区块哈希为:'+txhash)
+          }
       })
+        this.refs.address_from_eth.value="";
+        this.refs.address_to_eth.value="";
+        this.refs.trans_value_eth.value="";
   }
 
     /**
@@ -205,7 +210,15 @@ class App extends Component {
       web3.eth.sendTransaction({
           from: this.state.myAddr,
           to: this.state.tx_Addr,
-          value: web3.toWei(trans_value, 'ether')
+          value: web3.toWei(trans_value, 'ether'),
+          gasPrice: 11,
+          gas: 300000
+      },function (err, txhash){
+          if(err){
+              alert('交易失败：'+err)
+          }else {
+              alert('交易成功，区块哈希为:'+txhash)
+          }
       })
       //转账完成后吧输入框清空
       this.refs.spend_value_eth.value = "";
@@ -217,9 +230,14 @@ class App extends Component {
      * 接受地址和金额
      * 调用智能合约的api转出代币
      */
-  withDrawEth(){
-      this.state.metaCoinInstance.withDrawETH(this.refs.spend_value_coin.value)
-        this.refs.spend_value_coin.value = ''
+    withDrawEth(){
+      this.state.metaCoinInstance.withDrawEth(this.refs.spend_value_coin.value,{gas:300000}).
+      then( result => {
+          alert('赎回成功')
+      }).catch(error=>{
+          alert('赎回失败：'+error)
+      })
+      this.refs.spend_value_coin.value = ''
   }
 
   render() {
@@ -228,7 +246,9 @@ class App extends Component {
         <main className="container">
           <div className="pure-g">
             <div className="pure-u-1-1 list-container">
-              <h1>账户列表</h1>
+              <h1>用户地址：<br/>{this.state.myAddr}</h1>
+              <h1>合约地址：<br/>{this.state.tx_Addr}</h1>
+              <h1>节点地址账户列表</h1>
               <div>
                 { this.state.accounts.map( acc => <div className="list-item" key={acc}>{acc}</div> ) }
               </div>
