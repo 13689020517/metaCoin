@@ -58,7 +58,10 @@ class App extends Component {
     async queryData(data) {
         var password = data.userpassword;
         var keystore = data.keystore;
+<<<<<<< HEAD
         console.log('keystore:'+keystore)
+=======
+>>>>>>> c40bdf1c8c5318cf378d49843b045998c3d9e5b3
         var temp = lightwallet.keystore.deserialize(keystore);
         /*以用户密码作为输出，产生的Uint8类型的数组的对称密钥，这个密钥用于加密和解密keystore*/
         let myAddr = await new Promise((resolve,reject)=>{
@@ -99,17 +102,27 @@ class App extends Component {
               tx_Addr:await instance.getContractAddr()
         })
       }).catch(error =>{
+<<<<<<< HEAD
           console.log(error)
       })
       //设置默认账户。
         MetaCoin.defaults(this.state.myAddr)
         this.state.web3.eth.defaultAccount=this.state.myAddr;
+=======
+      })
+      //设置默认账户。
+        MetaCoin.defaults(this.state.myAddr)
+>>>>>>> c40bdf1c8c5318cf378d49843b045998c3d9e5b3
     })
   }
 
   initWeb3(temp){
       let provider = new hooked({
+<<<<<<< HEAD
           host: 'http://192.168.1.120:8545',
+=======
+          host: 'http://127.0.0.1:9545',
+>>>>>>> c40bdf1c8c5318cf378d49843b045998c3d9e5b3
           transaction_signer: temp
       });
       let web3 = new Web3(provider)
@@ -187,7 +200,11 @@ class App extends Component {
            gas: 300000
       },function (err, txhash){
           if(err){
+<<<<<<< HEAD
               alert('交易失败：'+err)
+=======
+              alert(err)
+>>>>>>> c40bdf1c8c5318cf378d49843b045998c3d9e5b3
           }else {
               alert('交易成功，区块哈希为:'+txhash)
           }
@@ -207,6 +224,7 @@ class App extends Component {
       let trans_value = this.refs.spend_value_eth.value;
       //先进行ETH转账
       let web3 = this.state.web3;
+      console.log(this.state.tx_Addr)
       web3.eth.sendTransaction({
           from: this.state.myAddr,
           to: this.state.tx_Addr,
@@ -215,7 +233,11 @@ class App extends Component {
           gas: 300000
       },function (err, txhash){
           if(err){
+<<<<<<< HEAD
               alert('交易失败：'+err)
+=======
+              alert(err)
+>>>>>>> c40bdf1c8c5318cf378d49843b045998c3d9e5b3
           }else {
               alert('交易成功，区块哈希为:'+txhash)
           }
@@ -230,6 +252,7 @@ class App extends Component {
      * 接受地址和金额
      * 调用智能合约的api转出代币
      */
+<<<<<<< HEAD
     withDrawEth(){
       this.state.metaCoinInstance.withDrawEth(this.refs.spend_value_coin.value,{gas:300000}).
       then( result => {
@@ -237,6 +260,10 @@ class App extends Component {
       }).catch(error=>{
           alert('赎回失败：'+error)
       })
+=======
+  withDrawEth(){
+      this.state.metaCoinInstance.withDrawETH(this.refs.spend_value_coin.value)
+>>>>>>> c40bdf1c8c5318cf378d49843b045998c3d9e5b3
       this.refs.spend_value_coin.value = ''
   }
 
